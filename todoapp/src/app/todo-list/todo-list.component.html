@@ -1,0 +1,19 @@
+<h1>{{ title }}</h1>
+
+<button class="btn btn-primary" (click)="addTask('New task details')">Add Task</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item }}</td>
+        <td>Delete</td>
+      </tr>
+    </tbody>
+  </table>
