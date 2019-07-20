@@ -15,9 +15,20 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ task.name }}</td>
         <td>
-          <button>View</button> 
-          <button>Delete</button>
+          <div *ngIf="task.status">Done</div>
+          <div *ngIf="!task.status">Not Done</div>
+        </td>
+        <td>
+          <button (click)="viewDetails(task)">View</button> 
+          <!--  -->
         </td>
       </tr>
     </tbody>
   </table>
+
+
+<section *ngIf="detailsTask.name">
+  <h1>{{ detailsTask.name }} [{{ detailsTask.id }}]</h1>
+  <p>{{ detailsTask.description }}</p>
+  <button class="btn btn-danger">Delete</button>
+</section>  

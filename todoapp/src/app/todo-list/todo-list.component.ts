@@ -14,25 +14,31 @@ export class TodoListComponent implements OnInit {
   //   "Display todo list from a static variable",
   // ];
 
+  detailsTask = {};
+
   tasklist = [
     {
       id: 1,
       name: "Add bootstrap theme",
+      description: "Task description 1",
       status: true
     },
     {
       id: 2,
       name: "Display todo list from a static variable",
-      status: true
+      description: "Task description 2",
+      status: false
     },
     {
       id: 3,
       name: "Delete an existing component",
-      status: true
+      description: "Task description 3",
+      status: false
     },
     {
       id: 4,
       name: "Create an angular component",
+      description: "Task description 4",
       status: true
     }
   ];
@@ -48,5 +54,9 @@ export class TodoListComponent implements OnInit {
   addTask(task: string){
     // this.data.push(task);
     // alert("Success");
+  }
+
+  viewDetails(task){
+    this.detailsTask = task;
   }
 }
