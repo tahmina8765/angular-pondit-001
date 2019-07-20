@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+  @Input() title:string;
 
-
-  title = "List of Tasks";
+  // title = "Important Task";
   // data = [
   //   "Add bootstrap theme",
   //   "Display todo list from a static variable",
@@ -56,7 +56,23 @@ export class TodoListComponent implements OnInit {
     // alert("Success");
   }
 
+
   viewDetails(task){
     this.detailsTask = task;
+  }
+
+  hideDetails(){
+    this.detailsTask = {};
+  }
+
+  onDeleteTask(task){
+    
+    let index = this.tasklist.indexOf(task);
+ 
+    if (index > -1) {
+      this.tasklist.splice(index, 1);
+    }
+
+    this.detailsTask = {};
   }
 }

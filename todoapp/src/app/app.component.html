@@ -14,7 +14,7 @@
   </div>
 </nav>
 <app-banner></app-banner>
-<app-todo-list></app-todo-list>
+<app-todo-list *ngFor="let category of categoryList" [title]="category"></app-todo-list>
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
