@@ -7,15 +7,34 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() name: string;
 
   title = "List of Tasks";
+  // data = [
+  //   "Add bootstrap theme",
+  //   "Display todo list from a static variable",
+  // ];
 
-  data = [
-    "Add bootstrap theme",
-    "Create an angular component",
-    "Delete an existing component",
-    "Display todo list from a static variable"
+  tasklist = [
+    {
+      id: 1,
+      name: "Add bootstrap theme",
+      status: true
+    },
+    {
+      id: 2,
+      name: "Display todo list from a static variable",
+      status: true
+    },
+    {
+      id: 3,
+      name: "Delete an existing component",
+      status: true
+    },
+    {
+      id: 4,
+      name: "Create an angular component",
+      status: true
+    }
   ];
 
   // data = "Display todo list for static variable";
@@ -23,11 +42,11 @@ export class TodoListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.name = "Tahmina"
+
   }
 
   addTask(task: string){
-    this.data.push(task);
+    // this.data.push(task);
     // alert("Success");
   }
 }

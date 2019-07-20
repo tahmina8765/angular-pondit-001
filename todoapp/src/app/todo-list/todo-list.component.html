@@ -6,14 +6,18 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of data; let i = index">
+      <tr *ngFor="let task of tasklist; let i = index">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ item }}</td>
-        <td>Delete</td>
+        <td>{{ task.name }}</td>
+        <td>
+          <button>View</button> 
+          <button>Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
