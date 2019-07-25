@@ -1,0 +1,11 @@
+ng new myshop --style scss --routing
+npm install bootstrap --save
+npm install jquery popper.js --save
+
+ng g module modules/Main
+ng g module modules/Shared --routing
+
+ng generate component modules/shared/components/header --export
+ng generate component modules/shared/components/sidebar --export
+
+ng g c modules/shared/pages/contact --export
