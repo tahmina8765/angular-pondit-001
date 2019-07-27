@@ -1,0 +1,14 @@
+
+
+$linkColor: #FF6600;
+
+h4 {
+    color: lighten($linkColor, 20%);
+  }
+.student a {
+  color: $linkColor;
+  &:hover {
+    color: darken($linkColor, 10%);
+  }
+}
+
