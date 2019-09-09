@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
 
   title = "List of Tasks";
+  today = new Date();
 
   data = [
     "Add bootstrap theme",
@@ -26,5 +28,10 @@ export class TodoListComponent implements OnInit {
   addTask(task: string){
     this.data.push(task);
     // alert("Success");
+  }
+
+  OnSubmit(fordata: NgForm){
+    console.log(fordata);
+    console.log(fordata.value);
   }
 }

@@ -1,19 +1,61 @@
-<h1>{{ title }}</h1>
+<div class="container">
 
-<button class="btn btn-primary" (click)="addTask('New task details')">Add Task</button>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of data; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ item }}</td>
-        <td>Delete</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="row">
+    <div class="col-8">
+      <h1>{{ title }}</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item }}</td>
+            <td>Delete</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h1>New task</h1>
+
+      <!-- <div class="form-group">
+        <label>Task name</label>
+        <input type="text" class="form-control" id="taskName" placeholder="Enter Task Name" #newtask>
+      </div>
+      <button class="btn btn-primary" (click)="addTask(newtask.value)">Add Task</button> -->
+
+
+
+      <div>
+        <form #todoForm="ngForm" (ngSubmit)="OnSubmit(todoForm)">
+          <div class="form-group">
+            <label>Task name</label>
+            <input type="text" class="form-control" id="taskName" placeholder="Enter Task Name" name="taskName" ngModel>
+          </div>
+
+
+          <div class="form-group form-check">
+
+            <input type="checkbox" class="form-check-input" id="taskStatus" name="taskStatus" ngModel>
+            <label>Task Completed</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <hr>
+      <h2>Form value</h2>
+      {{ todoForm.value | json }}
+      {{ today | date :'dd/LL/yyyy'}}
+
+    </div>
+  </div>
+
+
+</div>
